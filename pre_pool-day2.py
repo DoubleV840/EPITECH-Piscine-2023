@@ -2,7 +2,6 @@
 #Created by Willipatafoul at 09:18 on 12/09/2023
 #
 
-
 print(1+1)
 print(30+12)
 print(777+(-735))
