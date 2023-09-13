@@ -77,4 +77,42 @@ string2 = "is"
 string3 = "the answer"
 concat = string1 + " " + string2 + " " + string3
 size = len(concat)
-print(f"The string", concat, "contains", size, "characters).")
+print(f"The string" + " \"" + concat + "\" " + "contains", size, "characters).")
+
+# ---------- CHALLENGE ---------- #
+
+liste = ["Cat","Garden","Mice"]
+chaine = "thE Cat's tactic wAS tO surpRISE thE mIce iN tHE gArdeN".lower()
+
+for i in chaine:
+    nb1 = chaine.count(i.lower())
+for i in chaine:
+    nb2 = chaine[::-1].count(i.lower())
+
+print(nb1+nb2)
+
+# ---------- User input Task 00 ---------- #
+
+name = input("What is your name ? ")
+print(f"Hello {name}")
+
+# ---------- User input Task 01 ---------- #
+
+name = input("What is your name ? ").capitalize()
+print(f"Hello {name}")
+
+# ---------- User input Task 02 ---------- #
+
+nb1 = int(input("Choose a first number : "))
+nb2 = int(input("Choose a second number : "))
+sum = nb1 + nb2
+
+print(f"The sum of the two provided numbers is {sum}")
+
+# ---------- User input Task 03 ---------- #
+
+nb = int(input("Choose a number : "))
+print(type(nb))
+
+# ---------- User input Task 04 ---------- #
+
