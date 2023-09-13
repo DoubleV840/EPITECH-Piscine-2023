@@ -116,3 +116,26 @@ print(type(nb))
 
 # ---------- User input Task 04 ---------- #
 
+input = "This is a test. is it possible to fly? Good things come to those who never give up."
+sentences = input.replace('?', '.').split('. ')
+s1, s2, s3 = [sentence.split()[0] for sentence in sentences[:3]]
+print(s1, s2, s3)
+
+# ---------- Exo bonus ---------- #
+
+# Bonjour1a1tous21je1suis1Albert1Nestor21le1castor31En1janvier1de1l4année1dernière21plus1de1dix5mille1personnes1m4ont1voués1un1culte31C4était1marrant21mais1un1peu1bizarre31En1tout1cas1plus1que1de1s4appeler1Albert1Nestor1en1étant1un1castor.
+
+# Remplacer les 1 par des espaces, les 2 par des virgules, les 3 par des points, les 4 par des apostrophes, les 5 par des tirets.
+# Trouver le nombre d'itération du mot castor
+# Remplacer la première lettre de chaque mot castor par une majuscule
+
+input = "Bonjour1a1tous21je1suis1Albert1Nestor21le1castor31En1janvier1de1l4année1dernière21plus1de1dix5mille1personnes1m4ont1voués1un1culte31C4était1marrant21mais1un1peu1bizarre31En1tout1cas1plus1que1de1s4appeler1Albert1Nestor1en1étant1un1castor."
+
+print(input.replace("1", " ")
+      .replace("2", ",")
+      .replace("3", ".")
+      .replace("4", "'")
+      .replace("5", "-")
+      .replace("castor", "Castor"))
+print(int(input.count("castor")))
+
