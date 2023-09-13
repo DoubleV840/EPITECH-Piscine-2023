@@ -121,7 +121,7 @@ sentences = input.replace('?', '.').split('. ')
 s1, s2, s3 = [sentence.split()[0] for sentence in sentences[:3]]
 print(s1, s2, s3)
 
-# ---------- Exo bonus ---------- #
+# ---------- Exo bonus 1 ---------- #
 
 # Bonjour1a1tous21je1suis1Albert1Nestor21le1castor31En1janvier1de1l4année1dernière21plus1de1dix5mille1personnes1m4ont1voués1un1culte31C4était1marrant21mais1un1peu1bizarre31En1tout1cas1plus1que1de1s4appeler1Albert1Nestor1en1étant1un1castor.
 
@@ -139,3 +139,32 @@ print(input.replace("1", " ")
       .replace("castor", "Castor"))
 print(int(input.count("castor")))
 
+# ---------- Exo bonus 2 ---------- #
+
+# racecarbananaappleleveldeifiedcivicnoonradarrotorreferkayakmadamtenetwowbobpoppeepredderrepaperrotatorlevelerreviverredividerdetartratedmalayalam
+
+# Palindromes : Mot ou groupe de mots qui peut se lire indifféremment de gauche à droite ou de droite à gauche en gardant le même sens (ex. la mariée ira mal ; Roma Amor).
+
+# L'objectif de l'exercice est de retrouver la liste de tous les palindromes dans le texte ci dessus. Pour ça, vous devez créer une fonction find_palindromic_substring, avec un paramètre str, et afficher chaque palindrome que vous trouvez. (Vous pouvez aussi retourner une liste de chaque palindrome qu'on affichera dans une autre fonction)
+# La longueur d'un palindrome doit être d'au minimum 2 caractère
+
+chaine = "racecar banana apple level deified civic noon radar rotor refer kayak madam tenet wow bob pop peep redder repaper rotator leveler reviver redivider detartrated malayalam"
+
+def palindromes_operation(mot):
+    return mot == mot[::-1]
+
+def find_palindromic_substring(chaine):
+    
+    mots = chaine.split()
+    
+    palindromes = []
+    
+    for mot in mots:
+        if palindromes_operation:
+            palindromes.append(mot)
+    return palindromes
+
+palindrome_liste = find_palindromic_substring(chaine)
+for palindrome in palindrome_liste:
+    print(palindrome)
+            
