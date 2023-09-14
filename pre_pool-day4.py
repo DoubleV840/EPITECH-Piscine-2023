@@ -108,10 +108,48 @@
 #     else:
 #         print("Il y a plus de boutilles !!!!!")
         
-# ---------- Loops Task 05 ---------- #
+# # ---------- Loops Task 05 ---------- #
 
-nombre = int(input("Ecrit un nombre à fractionner : "))
-for i in range(2, nombre // 2 + 1):
-    multiples = [j for j in range(i, nombre, i) if j < nombre]
-    multiples.sort(reverse=True)
-    print(multiples)
+# nombre = int(input("Ecrit un nombre à fractionner : "))
+# for i in range(2, nombre // 2 + 1):
+#     multiples = [j for j in range(i, nombre, i) if j < nombre]
+#     multiples.sort(reverse=True)
+#     print(multiples)
+
+# # ---------- Challenge ---------- #
+
+# chaine = input("Entrez une phrase : ")
+# nb = int(input("Entrez un nombre : "))
+
+# voyelles = "aeiouyAEIOUY"
+
+# if nb == 0:
+#     quit
+# elif nb >= 42:
+#     print(nb)
+# else:
+#     print(chaine)
+# for voyelle in chaine:
+#     if voyelle in voyelles:
+#         print(nb)
+#         break
+
+# ---------- Encyption Task 01 ---------- #
+
+message = input("Écrivez un message à crypter : ")
+key = int(input("Donnez-moi un nombre pour le décalage du cryptage : "))
+
+message_crypte = ""
+
+for caractere in message:
+    if 'a' <= caractere <= 'z' or 'A' <= caractere <= 'Z':
+        nouveau_caractere = chr(ord(caractere) + key)
+        if caractere.islower() and ord(nouveau_caractere) > ord('z'):
+            nouveau_caractere = chr(ord(nouveau_caractere) - 26)
+        elif caractere.isupper() and ord(nouveau_caractere) > ord('Z'):
+            nouveau_caractere = chr(ord(nouveau_caractere) - 26)
+    else:
+        nouveau_caractere = caractere
+    message_crypte += nouveau_caractere
+
+print("Message crypté : ", message_crypte)
