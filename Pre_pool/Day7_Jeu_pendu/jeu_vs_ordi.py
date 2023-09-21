@@ -2,43 +2,52 @@
 #Created by Willipatafoul at 09:56 on 19/09/2023
 #
 import random
+import time
+
+mots = ["python", "pendu", "informatique", "programmation", "ordinateur", "algorithmique"]
+
+
+def choisir_mot():
+    return random.choice(mots)
+
+def afficher_mot_cache(mot, lettres_devinees):
+    mot_cache = ""
+    for lettre in mot:
+        if lettre in lettres_devinees:
+            mot_cache += lettre
+        else:
+            mot_cache += "_ "
+    return mot_cache
 
 def vs_ordinateur():
-    liste_mots = ["Tuesdayaa"]
-    mot_choisi = random.choice(liste_mots).upper()
+    mot_a_deviner = choisir_mot()
+    tentatives_restantes = 6  # Le joueur a 6 chances
+    lettres_devinees = []
     
-    taille_mot_choisi = int(len(mot_choisi))
-    
-    mot_de_stockage = []
-    
-    count = 0
-    
-    for i in range(taille_mot_choisi):
-        print("_ ", end='')
+    while tentatives_restantes > 0:
+        mot_cache = afficher_mot_cache(mot_a_deviner, lettres_devinees)
+        print(mot_cache)
+        lettre = input("Guess a letter : ").lower()
         
-    while True:        
-        count_lettres_trouvees = 0
-        
-        if count <= 1:
-            print("/", count, "point")
-        else:
-            print("/", count, "points")
-        print()
-
-        choix = input("Choisissez une lettre ou un mot : ").upper()
-          
-        if i == choix:
-            count_lettres_trouvees += 1
-            count += 1
-        print(f"Found {count_lettres_trouvees} '{choix}'")
-        
-        for i in mot_choisi:
-            if i == choix:
-                mot_de_stockage.append(choix)
-                print(mot_de_stockage)
-        for i in range(taille_mot_choisi) and mot_choisi:
-            if i == choix:
-                print(choix,"", end='')
+        if len(lettre) == 1 and lettre.isalpha():
+            if lettre in lettres_devinees:
+                print("Already guessed !")
+            elif lettre in mot_a_deviner:
+                lettres_devinees.append(lettre)
+                print(f"'{lettre}' found !")
             else:
-                print("_ ", end='')
-                
+                lettres_devinees.append(lettre)
+                tentatives_restantes -= 1
+                print("Wrong guess. You have", tentatives_restantes, "try.")
+        else:
+            print("Enter a valid letter.")
+        
+    
+        if "_" not in afficher_mot_cache(mot_a_deviner, lettres_devinees):
+            print()
+            print("Congratulations ! You have guessed the word :", mot_a_deviner)
+            time.sleep(2)
+            break
+    
+    if tentatives_restantes == 0:
+        print("LOST ! The word to guess was :", mot_a_deviner)
