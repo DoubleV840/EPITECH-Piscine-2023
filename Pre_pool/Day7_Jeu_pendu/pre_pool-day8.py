@@ -66,8 +66,6 @@
 
 import tkinter as tk
 from tkinter import *
-import time
-
 def pendu():
         
     window = tk.Tk() #Initialisation de la fenêtre
@@ -101,7 +99,7 @@ def pendu():
     # de couleur bleue, d'épaisseur 2
     canvas.create_line(150, 125, 150, 250, fill = "blue", width = 3) #Corps
     canvas.create_line(150, 250, 100, 300, fill = "blue", width = 3) #Jambe gauche
-    canvas.create_line(150, 250, 200, 300, fill = "blue", width = 3) #Jambe droite
+    canvas.create_line(150, 250, 200, 300, fill = "blue", width = 3) #jJambe droite
     canvas.create_line(100, 175, 150, 150, fill = "blue", width = 3) #Bras gauche
     canvas.create_line(150, 150, 200, 175, fill = "blue", width = 3) #Bras droit
     canvas.create_line(150, 40, 150, 75, fill = "black", width = 5) #Corde cou
@@ -146,14 +144,6 @@ def pendu():
         x, y = 150, 100  # Coordonnées du centre du cercle
         canvas.create_oval(x - rayon, y - rayon, x + rayon, y + rayon, outline="blue", width=3)
     dessiner_cercle()
-    
-    vitesse = 2
-    x = 50
-    while x < 250:  # Limite de déplacement
-        x += vitesse  # Déplacement horizontal
-        canvas.move(pendu, vitesse, 0)  # Déplace le point sur le canevas
-        window.update()  # Met à jour la fenêtre
-        time.sleep(0.03)  # Pause pour contrôler la vitesse de l'animation
 pendu()
 tk.mainloop() #Affichage constant de la fenêtre
 
