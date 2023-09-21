@@ -44,8 +44,7 @@ def vs_humain():
                 print("Wrong guess. You have", tentatives_restantes, "try.")
         else:
             print("Enter a valid letter.")
-        
-    
+            
         if "_" not in afficher_mot_cache(mot_a_deviner, lettres_devinees):
             print()
             print("Congratulations ! You have guessed the word :", mot_a_deviner)
