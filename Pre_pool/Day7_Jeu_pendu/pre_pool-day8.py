@@ -144,6 +144,7 @@ def pendu():
         x, y = 150, 100  # Coordonnées du centre du cercle
         canvas.create_oval(x - rayon, y - rayon, x + rayon, y + rayon, outline="blue", width=3)
     dessiner_cercle()
+
 pendu()
 tk.mainloop() #Affichage constant de la fenêtre
 
